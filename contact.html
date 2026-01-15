@@ -39,61 +39,52 @@
                 border-radius: 8px;
             } 
             main{
-                margin-top: 150px;
+                margin-top: 50px;
                 text-align: left;
             } 
-            .fname{
-                font-size: 70px;
-                font-weight: bold;
+            .container{
+                font-size: 22px;
                 color: #102601;
-                text-align: left;
-                margin-left: 50px;
-                transition: 0.5s;
-
-            } 
-            .fname:hover{
-                color: #2E5902;
-                letter-spacing: 2px;
-            }
-            .lname{
-                font-size: 80px;
-                font-weight: bold;
-                color: #102601;
-                text-align: left;
+                margin-top: 0px;
                 margin-left: 50px;
                 transition: 0.5s;
             }
-            .lname:hover{
-                color: #2E5902;
-                letter-spacing: 3px;
-            }
-            .title{
+            h1{
                 font-size: 40px;
-                font-weight: bold;
-                color: #102601;
-                text-align: left;
-                margin-left: 50px;
-                letter-spacing: 5px;
-                transition: 0.5s;
-            }
-            .title:hover{
-                color: #2E5902;
-                letter-spacing: 8px;
-            }
-            .icons{
-                position: relative;
-                bottom: 0;
-                margin: 20px;
-            }
-            .icons img{
-                width: 40px;
-                height: 40px;
-                margin-left: 35px;
+                margin-bottom: 20px;
                 transition: 0.3s;
             }
-            .icons img:hover{
-                width: 48px;
-                height: 48px;
+            .container h1:hover{
+                letter-spacing: 3px;
+            }
+            p{
+                width: 450px;
+            }
+            
+            .contact a{
+                text-decoration: none;
+                color: #102601;
+                font-size: 20px;
+                margin: 10px 0px;
+                display: inline-block;
+                transition: 0.3s;
+            }
+            
+            .icons{
+                width: 30px;
+                height: 30px;
+                vertical-align: middle;
+                margin-right: 10px;
+                transition: 0.3s;
+            }
+            .contact a:hover .icons{
+                transform: scale(1.2);
+                margin-right: 15px;
+                margin-bottom: 5px;
+            }
+            ul{
+                list-style-type: none;
+                padding: 0;
             }
         </style>
     </head>
@@ -107,16 +98,18 @@
             </div>
         </header>
         <main>
-            <div class="fname">Swayam</div>
-            <div class="lname">Motghare</div>
-            <div class="title"><span>Web</span>-<span>Designer</span></div>
-        </main>
-        <footer>
-            <div class="icons">
-                <a href="https://www.instagram.com/swayam.motghare.05/" target="_blank"><img src="images/instagram.png" alt="instagram"></a>
-                <a href="https://www.linkedin.com/in/swayammotghare2005/" target="_blank"><img src="images/linkedin.png" alt="linkedin"></a>
-                <a href="https://github.com/swayam-motghare" target="_blank"><img src="images/github.png" alt="github"></a>
+            <div class="container">
+                <h1>Contact Me</h1>
+                <p>If you'd like to get in touch, feel free to reach out via email or follow me on social media !</p>
+                <div class="contact">
+                    <ul>
+                        <li><a href="mailto:motghareswayam@gmail.com" class="email" target="_blank"><img src="images/mail.png" alt="gmail" class="icons" >motghareswayam@gmail.com</a></li>
+                        <li><a href="https://github.com/Swayam-Motghare" class="github" target="_blank"><img src="images/github.png" alt="github" class="icons">github.com/Swayam-Motghare</a></li>
+                        <li><a href="https://www.linkedin.com/in/swayammotghare2005/" class="linkedin" target="_blank"><img src="images/linkedin.png" alt="linkedin" class="icons">linkedin.com/swayam-motghare-05</a></li>
+                        <li><a href="https://www.instagram.com/swayam.motghare.05/" class="insta" target="_blank"><img src="images/instagram.png" alt="instagram" class="icons">instagram.com/swayam.motghare.05</a></li>
+                    </ul>
+                </div>
             </div>
-        </footer>
+        </main>
     </body>
 </html>

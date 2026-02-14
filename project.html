@@ -21,25 +21,28 @@
             background-size: cover;
             background-attachment: fixed;
             }
+            header{
+                width: 40vw;
+            }
             .navbar{
-                display: inline-block;
-                text-align: left;
-                width: 100%;
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
                 margin: 15px;
             }
             .navbar a{
                 text-decoration: none;
                 color: #102601;
-                margin: 5px;
-                padding: 5px 15px;
-                font-size: 20px;
-                transition: 0.3s;
+                font-size: 22px;
+                margin: 0px 20px;
+                text-align: center;
+                transition: 0.5s;
             }
             .navbar a:hover{
+                letter-spacing: 2px;
                 background-color: #102601;
                 color: white;
                 border-radius: 8px;
-            } 
+            }            
             main{
                 margin-top: 150px;
                 text-align: left;
@@ -82,6 +85,46 @@
                 width: 48px;
                 height: 48px;
             }
+            .projects-container{
+                margin-top: 20px;
+                display: grid;
+                grid-template-columns: repeat(auto-fit, 260px);
+                gap: 20px 45px;
+            }
+            #p-container{
+                margin-top: 20px;
+                background-color: rgba(255, 255, 255, 0.8);
+                padding: 10px;
+                border-radius: 8px;
+                width: 260px;
+                height: 220px;
+                transition: 0.3s;
+                
+            }
+            .projects{
+                display: inline-block;
+                margin: 20px;
+                width: 200px;
+            }
+            .projects img{
+                width: 250px;
+                height: 150px;
+                border-radius: 8px;
+            }
+            #p-container:hover{
+                transform: scale(1.05);
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+                background-color: rgba(255, 255, 255, 1);
+            }
+            .p-text{
+                font-size: 18px;
+                margin-top: 10px;
+            }
+            .projects a{
+                text-decoration: none;
+                color: #102601;
+            }
+            
         </style>
     </head>
     <body>
@@ -96,12 +139,28 @@
         <main>
             <div class="about-me">
                 <h1>Projects</h1>
-                <!-- <p>Here are some of my recent projects:</p>
-                <ul>
-                    <li>Project 1: Description of project 1</li>
-                    <li>Project 2: Description of project 2</li>
-                    <li>Project 3: Description of project 3</li>
-                </ul> -->
+                <div class="projects-container">
+                    <div class="projects" id="p-container">
+                        <a href="https://github.com/Swayam-Motghare/PortFolio"><img src="images/portfolio-project-screenshot.png" alt="project-1-screenshot"></a>
+                        <p class="p-text">Portfolio Website</p>
+                    </div>
+
+                     <div class="projects" id="p-container">
+                        <a href="#project-link"><p>Comming Soon...</p><!--<img src="images/project2-screenshot.png" alt="project-2-screenshot">--></a> 
+                        <p class="p-text">Project #2</p>
+                    </div>
+
+                    <div class="projects" id="p-container">
+                        <a href="#project-link"><p>Comming Soon...</p><!--<img src="images/project3-screenshot.png" alt="project-3-screenshot">--></a> 
+                        <p class="p-text">Project #3</p>
+                    </div>
+
+                    <div class="projects" id="p-container">
+                        <a href="#project-link"><p>Comming Soon...</p><!--<img src="images/project4-screenshot.png" alt="project-4-screenshot">--></a> 
+                        <p class="p-text">Project #4</p>
+                    </div>  
+
+                </div>
                 <p>Projects will be updated soon...</p>
             </div>
         </main>

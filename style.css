@@ -8,25 +8,57 @@ body{
     background-size: cover;
     background-attachment: fixed;
 }
+.loading-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #00020D;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    color: white;
+    font-size: 4em;
+    font-family: "sofia", cursive;
+    animation-name: fadeOut;
+    animation-duration: 4s;
+    animation-fill-mode: forwards;
+}
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
 header{
     width: 40vw;
 }
 .navbar{
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(5, 1fr);
     margin: 15px;
 }
-.navbar a{
+.home-btn, .about-btn, .project-btn, .contact-btn, .logout-btn{
+    color: black;
     text-decoration: none;
-    color: #102601;
-    font-size: 22px;
-    margin: 0px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
     text-align: center;
-    transition: 0.3s;
+    transition: 0.5s;
+    margin: 0px 5px;
 }
-.navbar a:hover{
-    /* letter-spacing: 2px; */
-    background-color: #102601;
+.home-btn:hover, .about-btn:hover, .project-btn:hover, .contact-btn:hover, .logout-btn:hover{
+    background-color: black;
     color: white;
-    border-radius: 8px;
-    transition: 0.5s;}
+    transition: 0.5s;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}

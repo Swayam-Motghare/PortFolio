@@ -1,0 +1,114 @@
+.main{
+    background-color: #00020D;
+    color: white;
+    text-align: center;
+    font-family: "sofia", cursive;
+    border-radius: 8px; 
+    width: 100vw;
+    height: 100vh;
+}
+.about-me{
+    display: grid;
+    grid-template-columns: 1fr;
+    padding: 20px;
+}
+.about-me h1{
+    font-size: 3em;
+    margin-bottom: 20px;
+}
+.projects-container{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    margin-top: 20px;
+    text-decoration: none;
+}
+.projects-container a{
+    text-decoration: none;
+    color: black;
+}
+.projects{
+    background-color: #1D2C40af;
+    border-radius: 8px;
+    padding: 10px;
+    font-family: "sofia", cursive;
+    text-decoration: none;
+    transition: 1s;
+}
+.projects h2{
+    font-size: 1.5em;
+    color: white;
+    text-decoration: none;
+}
+.projects p{
+    font-size: 1em;
+    margin-top: 5px;
+    color: white;
+    text-decoration: none;
+}
+.projects:hover{
+    background-color: #0339A6;
+    color: white;
+    text-decoration: none;
+    transition: 0.5s;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    transform: scale(1.025);
+}
+.a-contaienr{
+    text-decoration: none;
+}
+.p-image{
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    text-decoration: none;
+}
+.p-text{
+    font-size: 1.5em;
+    margin-top: 10px;
+    text-decoration: none;
+    color: #0339A6;
+    color: white;
+}
+.p-description{
+    font-size: 1em;
+    margin-top: 5px;
+    color: white;
+    text-decoration: none;
+}
+.p-container-coming-soon{
+    background-color: #1D2C40af;
+    border-radius: 8px;
+    padding: 10px;
+    font-family: "sofia", cursive;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+.p-container-coming-soon h2{
+    font-size: 1.5em;
+    color: white;
+    text-decoration: none;
+}
+.p-container-coming-soon:hover{
+    transform: scale(1.025);
+}
+.icons{
+    display: grid;
+    grid-template-columns: repeat(3, 40px);
+    justify-content: left;
+    justify-items: left;
+    gap: 20px;
+    margin-top: 50px;
+    margin-left: 20px;
+}
+.f-icons{
+    width: 40px;
+    height: 40px;
+    transition: 0.3s;
+}
+.f-icons:hover{
+    transform: scale(1.2);
+}

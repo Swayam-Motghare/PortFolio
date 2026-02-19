@@ -41,7 +41,8 @@ header{
 }
 .navbar{
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(5, 20%);
+    gap: 5px;
     margin: 15px;
 }
 .home-btn, .about-btn, .project-btn, .contact-btn, .logout-btn{

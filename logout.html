@@ -8,7 +8,7 @@
 </head>
 <body>
     <div class="main-container">
-        <div class="logout-container">
+        <!-- <div class="logout-container">
             <div class="greetings">Thank You For Visiting My Portfolio Webpage.</div>
             <div class="contact">
                 <p>Leave a email for me to contact you back.</p>
@@ -18,7 +18,21 @@
                     <input type="submit" value="Submit" class="submit-btn">
                 </div>
             </div>
-        </div>
+        </div> -->
+        <form action="thank-you-page.html" method="post">
+            <div class="logout-container">
+                <div class="greetings">Thank You For Visiting My Portfolio Webpage.</div>
+                    <div class="contact">
+                        <p>Leave a email for me to contact you back.</p>
+                        <input type="email" placeholder="Enter your email" id="email" class="email-input" name="email" required>
+                        <div class="submit-container">
+                            <button class="go-back-btn"><a href="index.html">Go Back</a></button>
+                            <input type="submit" value="Submit" class="submit-btn">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
     </div>
 </body>
 </html>

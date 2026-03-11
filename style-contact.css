@@ -46,8 +46,27 @@ ul{
     list-style-type: none;
     padding: 0;
 }
-@media (max-width:600px){
+.contact-mobile{
+    display: none;
+}
+/* Average Phone Resolution */
+@media (max-width:480px){
+    main{
+        margin-top: 150px;
+    }
     .container p{
         width: 80%;
+    }
+    .contact{
+        display: none;
+    }
+    .contact-mobile{
+        margin: auto;
+        display: flex;
+        gap: 15px;
+    }
+    .contact-mobile img{
+        width: 35px;
+        height: 35px;
     }
 }

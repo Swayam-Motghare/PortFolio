@@ -59,14 +59,13 @@ header{
     color: #fff;
     text-decoration: none;
 }
-
 @media (max-width:600px){
     .navbar{
-        width: 100vw;
+        width: 90vw;
         justify-content: center;
+        gap: 5px;
     }
     body{
         background-image: linear-gradient(to bottom , #0986da, #aaaaaa);
     }
-    
 }   

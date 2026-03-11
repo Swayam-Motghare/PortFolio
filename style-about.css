@@ -44,17 +44,13 @@ aside{
     width: 48px;
     height: 48px;
 }
-@media (max-width:600px){
-    p:hover{
-        transform: none;
-    }
-    p{
-        height: 50vw;
-    }
+@media (max-width:360px){
+    
 }
-@media (max-width:600px){
+@media (max-width:768px){
     .about-me p{
-        width: 390px;
+        width: 90%;
+        margin: 10px;
     }
     .about-me p:hover{
         transform: scale(1.025);

@@ -1,0 +1,62 @@
+ main{
+    margin-top: 100px;
+    text-align: left;
+} 
+.about-me{
+    font-size: 22px;
+    color: #102601;
+    margin-top: 0px;
+    margin-left: 50px;
+}
+.about-me h1{
+    font-size: 40px;
+    margin-bottom: 20px;
+    transition: 0.5s;
+}
+.about-me h1:hover{
+    color: #101f01;
+    letter-spacing: 5px;
+}
+p{
+    width: 450px;
+    transition: 0.5s;
+}
+p:hover{
+    transform: scale(1.05);
+}
+aside{
+    margin-top: -150px;
+    margin-left: 550px;
+    float: right;
+}
+.icons{
+    position: relative;
+    bottom: 0;
+    margin: 20px;
+}
+.icons img{
+    width: 40px;
+    height: 40px;
+    margin-left: 35px;
+    transition: 0.3s;
+}
+.icons img:hover{
+    width: 48px;
+    height: 48px;
+}
+@media (max-width:600px){
+    p:hover{
+        transform: none;
+    }
+    p{
+        height: 50vw;
+    }
+}
+@media (max-width:600px){
+    .about-me p{
+        width: 390px;
+    }
+    .about-me p:hover{
+        transform: scale(1.025);
+    }
+}

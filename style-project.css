@@ -112,3 +112,13 @@
 .f-icons:hover{
     transform: scale(1.2);
 }
+
+@media (max-width:600px){
+    .projects-container{
+        display: flex;
+        flex-direction: column;
+        width: 80vw;
+        align-items: center;
+        justify-items: center;
+    }
+}

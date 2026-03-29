@@ -31,7 +31,7 @@
     background-color: #1D2C40af;
     border-radius: 8px;
     padding: 10px;
-    font-family: "sofia", cursive;
+    font-family: "sofia sans", sans-serif;
     text-decoration: none;
     transition: 1s;
 }

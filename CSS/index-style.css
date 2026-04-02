@@ -33,7 +33,7 @@ main{
     margin: 0;
     padding: 0;
     height: 100vh;
-    background: linear-gradient(to right, rgba(255, 255, 255, 0) 50%, #f9fafb 100%), url(./images/my-image.png);
+    background: linear-gradient(to right, rgba(255, 255, 255, 0) 50%, #f9fafb 200%), url(./images/my-image.png);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;

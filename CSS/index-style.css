@@ -1,33 +1,3 @@
-/* Navbar */
-.navbar{
-    margin: 2vw;
-    display: flex;
-    gap: 15px;
-    justify-content: flex-end;
-    align-items: center;
-    float: right;
-    z-index: 9999999;
-}
-.navbar a{
-    text-decoration: none;
-    color: #1f2937;
-    text-transform: capitalize;
-    font-size: 1.1rem;
-}
-.nav-btn{
-    cursor: pointer;
-}
-.nav-btn a{
-    margin: 0px 20px;
-    transition: 0.5s;
-}
-
-.nav-btn a:hover{
-    border-bottom: 2px solid;
-}
-.nav-social a{
-    padding: 5px;
-}
 
 main{
     margin: 0;

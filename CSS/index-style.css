@@ -3,7 +3,7 @@ main{
     margin: 0;
     padding: 0;
     height: 100vh;
-    background: linear-gradient(to right, rgba(255, 255, 255, 0) 50%, #f9fafb 100%), url(../images/my-image.png);
+    background: linear-gradient(to right, rgba(255, 255, 255, 0) 50%, #f9fafb 100%), url(../my-image.png);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -35,7 +35,7 @@ main{
 }
 .role span{
     background: linear-gradient(90deg, #283547 0%, #433076 50%, #5e41ad 100%);
-    -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 .desc{

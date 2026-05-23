@@ -1,100 +1,61 @@
-*{
-    scroll-behavior: smooth;
-}
-header{
-    background-color: aqua;
-    height: 10vh;
-}
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
 body{
-    /* background-color: aquamarine; */
-    height: 80vh;
-    
-}
-aside{
-    display: flex;
-    flex-direction: column;
-    width: fit-content;
-    border-radius: 15px 15px ;
-    background-color: #433076;
-    padding: 5px 0px;
-    float: right;
-    top: 30vh;
-    right: 1vw;
-    position: fixed;
-}
-aside a{
-    background-color: antiquewhite;
-    text-decoration: none;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f8;
     color: black;
-    margin: 1vh;
-    padding: 5px;
-    margin-top: 15px;
-    border-radius: 50%;
-    transition: 0.3s;
+    font-family: "Inter", sans-serif;
 }
-aside a:hover{
-    background-color: white;
-    transform: scale(1.2);
-    color: #433076;
-}
-aside a:active{
-    transform: scale(1.2);
-    background-color: white;
-    color: #433076;
-}
-aside .bottom{
-    margin-bottom: 15px;
-}
-.about{
-    width: calc(100vw - 15px);
-    height: 100vh;
+.navbar{
+    height: 5vw;
+    background-color: #ffffff;
     display: flex;
     align-items: center;
-    flex-direction: column;
-
 }
-.abt-sec{
-    width: fit-content;
-    margin: 15px 0px;
-    padding: 15px;
-    border: 2px solid #433076;
-    border-radius: 15px;
-    background: #000;
-    color: aliceblue;
-    text-transform: capitalize;
-    text-align: center;
+.navbar .pc-screen{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
 }
-
-.sec-head{
-    height: fit-content;
-    margin-top: 15px;
-    font-size: 2em;
+.logo{
+    width: 65vw;
+}
+.logo h1{
+    margin-left: 2vw;
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: #4210CC;
+}
+.navbar a{
+    text-decoration: none;
+    color: #1f2937;
     text-transform: capitalize;
-    width: fit-content;
-    border-bottom: 2px solid #433076;
+    font-size: 1.1rem;
+}
+.nav-row{
+    cursor: pointer;
+}
+.nav-row a{
+    margin: 0px 20px;
+    transition: 0.5s;
+}
+.nav-row a:hover{
+    border-bottom: 2px solid #4210CC;
+    color: #4210CC;
+}
+.nav-social a{
+    margin: 0px;
     padding: 5px;
-    
 }
 
-.portfolio{
+/* Main */
+main .pc-screen{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
     width: calc(100vw - 15px);
     height: 100vh;
-}
-.contact{
-    width: calc(100vw - 15px);
-    height: 100vh;
-}
-footer{
-    width: calc(100vw - 15px);
-    background-color: bisque;
-    height: 10vh;
+    background-color: #f7f7f7;
 }
 
-@media (min-width:720px) {
-    .about{
-        flex-direction: column;
-    }
-    .abt-sec{
-        background: #433076;
-    }
-}

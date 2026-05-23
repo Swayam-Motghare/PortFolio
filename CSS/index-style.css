@@ -63,42 +63,16 @@ main{
     background-color: transparent;
     color: #433076;
 }
-@media (max-width:820px){
-    .navbar{
+.menu{
+    display: none;
+}
+/* For Mobile */
+@media (max-width:480px){
+    .pc-screen{
         display: none;
     }
     main{
-        background-image: none;
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
+        background: none;
     }
-    .intro{
-        display: none;
-    }
-    .upper-container{
-        display: block;
-        width: 100%;
-        height: 50vh;
-        text-align: center;
-        background-color: #ffffff;
-        overflow: hidden;
-        flex-grow: 0;
-        /* border: 2px solid; */
-    }
-    .upper-container img{
-        width: 120%;
-    }
-    .bottom-container{
-        display: block;
-        height: 50vh;
-        background-color: #ffffff;
-    }
-    .bottom-container .say-hi, .role, .desc, .m-nav-btn{
-        margin: 20px 0px 5px 20px;
-    }
-    .bottom-container .role{
-        font-size: 8vw;
-        flex-shrink: 0;
-    }
+
 }

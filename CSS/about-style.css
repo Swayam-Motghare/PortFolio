@@ -92,7 +92,7 @@ footer{
 
 @media (min-width:720px) {
     .about{
-        flex-direction: row;
+        flex-direction: column;
     }
     .abt-sec{
         background: #433076;

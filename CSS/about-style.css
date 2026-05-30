@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+body{
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f8;
+    color: black;
+    font-family: "Inter", sans-serif;
+}
+.navbar{
+    height: 5vw;
+    background-color: #ffffff;
+    display: flex;
+    align-items: center;
+}
+.navbar .pc-screen{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.logo{
+    width: 65vw;
+}
+.logo h1{
+    margin-left: 2vw;
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: #4210CC;
+}
+.navbar a{
+    text-decoration: none;
+    color: #1f2937;
+    text-transform: capitalize;
+    font-size: 1.1rem;
+}
+.nav-row{
+    cursor: pointer;
+}
+.nav-row a{
+    margin: 0px 20px;
+    transition: 0.5s;
+}
+.nav-row a:hover{
+    border-bottom: 2px solid #4210CC;
+    color: #4210CC;
+}
+.nav-social a{
+    margin: 0px;
+    padding: 5px;
+}
+
+/* Main */
+main .pc-screen{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    width: calc(100vw - 15px);
+    height: 100vh;
+    background-color: #f7f7f7;
+}
+
+.l-main .sub-head{
+    font-size: 1rem;
+    font-weight: 400;
+    color: #4210CC;
+    background-color: #4210cc5d;
+    width: fit-content;
+    padding: 5px 10px;
+    border-radius: 50px;
+}
+.intro p{
+    text-transform: capitalize;
+    font-size: 2rem;
+    font-weight: 600;
+}
+.intro span{
+    color: #4210CC;
+    display: block;
+}
+.desc p{
+    color: #999999;
+}
+.feats{
+    display: flex;
+}
+.feats .sub-feats i{
+    color: #4210CC;
+    background-color: #4210cc55;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 1.2rem;
+}
+.sub-feats h3{
+    line-height: 1;
+}
+.sub-feats p{
+    line-height: 1;
+    color: #999999;
+}
+.ctr a{
+    text-decoration: none;
+    background-color: #4210cc;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+.ctr i{
+    margin-right: 10px;
+}
+.ctr .btn-2{
+    background-color: white;
+    border: 2px solid #4210CC;
+    color: #4210CC;
+}

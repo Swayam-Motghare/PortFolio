@@ -50,6 +50,9 @@ body{
 }
 
 /* Main */
+main{
+    height: fit-content;
+}
 main .pc-screen{
     display:grid;
     grid-template-columns: 1fr 1fr;
@@ -58,19 +61,23 @@ main .pc-screen{
     height: 100vh;
     background-color: #f7f7f7;
 }
-
+.l-main{
+    padding-left: 35px;
+    padding-top: 35px;
+    height: fit-content;
+}
 .l-main .sub-head{
     font-size: 1rem;
     font-weight: 400;
     color: #4210CC;
-    background-color: #4210cc5d;
+    background-color: #4210cc42;
     width: fit-content;
     padding: 5px 10px;
     border-radius: 50px;
 }
 .intro p{
     text-transform: capitalize;
-    font-size: 2rem;
+    font-size: 3em;
     font-weight: 600;
 }
 .intro span{
@@ -82,6 +89,9 @@ main .pc-screen{
 }
 .feats{
     display: flex;
+    justify-content: left;
+    gap: 45px;
+    padding: 15px 0px;
 }
 .feats .sub-feats i{
     color: #4210CC;
@@ -89,6 +99,7 @@ main .pc-screen{
     padding: 10px;
     border-radius: 10px;
     font-size: 1.2rem;
+    
 }
 .sub-feats h3{
     line-height: 1;
@@ -104,6 +115,10 @@ main .pc-screen{
     padding: 10px 20px;
     border-radius: 5px;
 }
+.ctr{
+    display: flex;
+    gap: 25px;
+}
 .ctr i{
     margin-right: 10px;
 }
@@ -111,4 +126,35 @@ main .pc-screen{
     background-color: white;
     border: 2px solid #4210CC;
     color: #4210CC;
+}
+.r-main{
+    border-left:1px solid #99999990 ;
+    height: fit-content;
+    margin-top: 25px;
+}
+.exp{
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    margin-left: 55px;
+    padding-left: 20px;
+    padding-right: 25px;
+    border-bottom: 1px solid #9999995e;
+    width: fit-content;
+}
+.exp-l{
+    display: inline-block;
+}
+.exp i{
+    font-size: 1.2em;
+    background-color: #7f61d261;
+    color: #4210CC;
+    padding: 10px;
+    border-radius: 50%;
+}
+.exp h3{
+    font-size: 2.9em;
+}
+.exp p{
+    color: #999999;
 }

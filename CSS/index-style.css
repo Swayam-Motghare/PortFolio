@@ -59,9 +59,25 @@ main{
     border: 2px solid #433076;
     border-radius: 15px;
 }
+.m-nav-btn .btn-1{
+    transition: 0.2s;
+}
+.m-nav-btn .btn-1:hover{
+    background-color: rgb(235, 235, 235);
+    border: 2px solid #433076;
+    color: #433076;
+    transform: translateX(2px);
+    box-shadow: 2px 2px 8px rgb(117, 117, 117);
+}
 .m-nav-btn .btn-2{
     background-color: transparent;
     color: #433076;
+    transition: 0.2s;
+}
+.m-nav-btn .btn-2:hover{
+    background-color: #5e41ad;
+    border: 2px solid #f9fafb;
+    color: #f9fafb;
 }
 .menu{
     display: none;

@@ -122,10 +122,21 @@ main .pc-screen{
 .ctr i{
     margin-right: 10px;
 }
+.btn-1{
+    border: 2px solid #4210CC;
+}
+.ctr .btn-1:hover{
+    color: #4210CC;
+    background-color: white;
+}
 .ctr .btn-2{
     background-color: white;
     border: 2px solid #4210CC;
     color: #4210CC;
+}
+.btn-2:hover{
+    color: white;
+    background-color: #4210CC;
 }
 .r-main{
     border-left:1px solid #99999990 ;

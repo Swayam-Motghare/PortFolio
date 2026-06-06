@@ -1,11 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
+/* *{
+    background-color: #f9ffac;
+} */
 body{
     margin: 0;
     padding: 0;
     background-color: #f8f8f8;
     color: black;
     font-family: "Inter", sans-serif;
+    height: 100vh;
 }
 .navbar{
     height: 5vw;
@@ -53,6 +57,9 @@ body{
 main{
     height: fit-content;
 }
+.about{
+    display: none ;
+}
 main .pc-screen{
     display:grid;
     grid-template-columns: 1fr 1fr;
@@ -62,6 +69,7 @@ main .pc-screen{
     background-color: #f7f7f7;
 }
 .l-main{
+    height: 80vh;
     padding-left: 35px;
     padding-top: 35px;
     height: fit-content;
@@ -157,7 +165,7 @@ main .pc-screen{
     display: inline-block;
 }
 .exp i{
-    font-size: 1.2em;
+    font-size: 1.5em;
     background-color: #7f61d261;
     color: #4210CC;
     padding: 10px;

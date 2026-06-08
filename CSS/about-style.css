@@ -1,8 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
-/* *{
-    background-color: #f9ffac;
-} */
+*{
+    /* background-color: #f9ffac; */
+    scroll-behavior: smooth;
+}
 body{
     margin: 0;
     padding: 0;
@@ -16,6 +17,7 @@ body{
     background-color: #ffffff;
     display: flex;
     align-items: center;
+    position: fixed;
 }
 .navbar .pc-screen{
     display: flex;
@@ -55,10 +57,17 @@ body{
 
 /* Main */
 main{
-    height: fit-content;
+    height: calc(90vh - 10px);
+    padding: 0;
+    margin: 0;
 }
+/* main *{
+    background-color: #deff82;
+} */
+
+/* AboutMe Page */
 .about{
-    display: none ;
+    padding-top: 5vh;
 }
 main .pc-screen{
     display:grid;
@@ -176,4 +185,42 @@ main .pc-screen{
 }
 .exp p{
     color: #999999;
+}
+
+/* Portfolio Page */
+
+.portfolio{
+    height: 100%;
+    width: 100%;
+    /* background-color: #f7ff5d; */
+}
+.port-header{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+.r-header img{
+    width: 250px;
+    float: right;
+    margin-right: 250px;
+}
+.port-header .l-header .sub-head{
+    width: fit-content;
+    background-color: #4210cc48;
+    padding: 5px 10px;
+    border-radius: 15px;
+    color: #4210CC;
+}
+.l-header .head p{
+    color: black;
+    font-size: 3rem;
+    font-weight: 700;
+    font-family: "Inter", sans-serif;
+    margin: 0;
+}
+.head p span{
+    color: #4210CC;
+}
+.l-header p{
+    color: #0000005e;
+    margin: 0;
 }

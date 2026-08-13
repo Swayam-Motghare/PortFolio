@@ -3,68 +3,627 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Swayam Motghare</title>
-    <link rel="stylesheet" href="./CSS/root-Style.css">
-    <link rel="stylesheet" href="./CSS/index-style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <meta name="description" content="Portfolio of Swayam Motghare, a frontend developer.">
+    <link rel="stylesheet" href="./CSS/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.0/css/all.min.css" integrity="sha512-ApSLB1Pd3/bZN8fWB/RG9YhN/7bd9Hkf3AGaE2mPfebjrxagjuBtx2GcgdqIlJkUzwylBo61r9Xa9NmgBI0swA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <title>Portfolio - Swayam Motghare</title>
 </head>
+
 <body>
+
     <header>
-        <div class="navbar">
-            <!-- For PC -->
-            <div class="pc-screen">
-                <div class="nav-btn">
-                    <a href="#home">Home</a>
-                    <a href="about.html">about</a>
-                    <a href="#portfolio">portfolio</a>
-                    <a href="#contact">contact</a>
-                </div>
-                <div class="nav-social">
-                    <a href="https://github.com/Swayam-Motghare" target="_blank">
-                        <i class="fa-brands fa-github"></i>
-                    </a>
-                    <a href="mailto:motghareswayam@gmail.com?subject=Hello&body=I want to contact you" target="_blank">
-                        <i class="fa-solid fa-at"></i>
-                    </a>
-                    <a href="https://www.instagram.com/swayam.motghare.05/" target="_blank">
-                        <i class="fa-brands fa-instagram"></i>
-                    </a>
-                    <a href="https://www.linkedin.com/in/swayammotghare2005/" target="_blank">
-                        <i class="fa-brands fa-linkedin"></i>
-                    </a>
-                </div>
+        <nav class="site-nav" id="site-navigation">
+
+            <div class="brand-mark" id="brand-mark">
+                <a href="#home">
+                    <h1>S<span>.</span></h1>
+                </a>
             </div>
-            <!-- For Smaller Screens -->
-            <div class="menu">
+
+            <div class="primary-navigation" id="primary-navigation">
+                <ul>
+                    <li>
+                        <a href="#home" class="navigation-link active" id="navigation-home">Home</a>
+                    </li>
+                    <li>
+                        <a href="#about" class="navigation-link" id="navigation-about">About</a>
+                    </li>
+                    <li>
+                        <a href="#skills" class="navigation-link" id="navigation-skills">Skills</a>
+                    </li>
+                    <li>
+                        <a href="#projects" class="navigation-link" id="navigation-projects">Projects</a>
+                    </li>
+                    <li>
+                        <a href="#contact" class="navigation-link" id="navigation-contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="talk-action" id="talk-action">
+                <a href="#contact" class="talk-button" id="talk-button">
+                    Let's Talk
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </div>
+
+            <button class="mobile-menu-button" id="mobile-menu-button" type="button" aria-label="Open navigation menu" aria-expanded="false">
                 <i class="fa-solid fa-bars"></i>
-            </div>
-        </div>
+            </button>
+
+        </nav>
     </header>
-    <body>
-        <main>
-            <!-- For PC -->
-            <div class="pc-screen">
-                <div class="intro">
-                <div class="say-hi">
-                    Hey, I'm Swayam
+
+    <main>
+
+        <section class="hero" id="home">
+
+            <div class="hero-content" id="hero-content">
+
+                <div class="hero-greeting" id="hero-greeting">
+                    <h2>HEY, I'M 👋</h2>
                 </div>
-                <div class="role">
-                    Creative <br/> <span>Web Designer</span>
+
+                <h1 class="hero-name" id="hero-name">
+                    Swayam<br>Motghare
+                </h1>
+
+                <div class="hero-role" id="hero-role">
+                    <h2>Frontend Developer</h2>
                 </div>
-                <div class="desc">
-                    <p>I build modern and responsive websites <br> to help your business grow.</p>
+
+                <div class="hero-description" id="hero-description">
+                    <p>
+                        I build modern, responsive and user-friendly
+                        websites that deliver great experiences.
+                    </p>
                 </div>
-                <div class="m-nav-btn">
-                    <a href="#" class="btn-1">View My Work</a>
-                    <a href="#" class="btn-2">Contact Me</a>
+
+                <div class="hero-actions" id="hero-actions">
+                    <a href="#projects" class="primary-action" id="view-work-button">
+                        View My Work
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+
+                    <a href="./assets/Swayam-Motghare-CV.pdf" class="secondary-action" id="download-cv-button" download>
+                        Download CV
+                        <i class="fa-solid fa-download"></i>
+                    </a>
+                </div>
+
+                <div class="technology-section" id="technology-section">
+
+                    <p class="technology-title">WORKING WITH</p>
+
+                    <div class="technology-list" id="technology-list">
+
+                        <div class="technology-card" id="technology-html" title="HTML5">
+                            <i class="fa-brands fa-html5"></i>
+                        </div>
+
+                        <div class="technology-card" id="technology-css" title="CSS3">
+                            <i class="fa-brands fa-css3-alt"></i>
+                        </div>
+
+                        <div class="technology-card" id="technology-javascript" title="JavaScript">
+                            <i class="fa-brands fa-square-js"></i>
+                        </div>
+
+                        <div class="technology-card" id="technology-git" title="Git">
+                            <i class="fa-solid fa-code-merge"></i>
+                        </div>
+
+                        <div class="technology-card" id="technology-github" title="GitHub">
+                            <i class="fa-brands fa-github"></i>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="availability-card" id="availability-card">
+
+                    <h5>
+                        <span>●</span>
+                        Available for work
+                    </h5>
+
+                    <p>
+                        Let's build something amazing together!
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="hero-image-container" id="hero-image-container">
+
+                <div class="hero-image-overlay"></div>
+
+                <img
+                    src="./Images/backgroudimage.png"
+                    alt="Swayam Motghare"
+                    class="hero-image"
+                    id="hero-image"
+                >
+
+            </div>
+
+        </section>
+
+        <section class="about-section" id="about">
+
+            <div class="about-header">
+                <p class="section-label">ABOUT ME</p>
+
+                <h2>
+                    Crafting digital experiences
+                    <span>with clean code.</span>
+                </h2>
+            </div>
+
+            <div class="about-content">
+
+                <div class="about-description">
+                    <p>
+                        I'm Swayam, a frontend developer who loves building
+                        modern, responsive and user-friendly websites.
+                    </p>
+
+                    <p>
+                        I focus on writing clean code, creating smooth user
+                        experiences and bringing ideas to life on the web.
+                    </p>
+
+                    <a href="#skills" class="about-button">
+                        More About Me
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <div class="about-focus">
+
+                    <div class="focus-item">
+                        <span class="focus-icon">
+                            <i class="fa-solid fa-code"></i>
+                        </span>
+
+                        <div>
+                            <h3>Clean Code</h3>
+                            <p>Maintainable and scalable development.</p>
+                        </div>
+                    </div>
+
+                    <div class="focus-item">
+                        <span class="focus-icon">
+                            <i class="fa-solid fa-mobile-screen"></i>
+                        </span>
+
+                        <div>
+                            <h3>Responsive</h3>
+                            <p>Interfaces designed for every screen.</p>
+                        </div>
+                    </div>
+
+                    <div class="focus-item">
+                        <span class="focus-icon">
+                            <i class="fa-solid fa-gauge-high"></i>
+                        </span>
+
+                        <div>
+                            <h3>Performance</h3>
+                            <p>Fast and efficient web experiences.</p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="about-stats">
+
+                <div class="stat-item">
+                    <span>6+</span>
+                    <p>Months Experience</p>
+                </div>
+
+                <div class="stat-item">
+                    <span>2+</span>
+                    <p>Projects in Progress</p>
+                </div>
+
+                <div class="stat-item">
+                    <span>5+</span>
+                    <p>Technologies</p>
+                </div>
+
+                <div class="stat-item">
+                    <span>∞</span>
+                    <p>Ideas to Build</p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <section class="skills-section" id="skills">
+
+            <div class="skills-heading">
+                <p class="section-label">MY SKILLS</p>
+
+                <h2>
+                    Tools I use to turn
+                    <span>ideas into reality.</span>
+                </h2>
+
+                <p class="skills-intro">
+                    Technologies and tools I use while building modern,
+                    responsive and interactive web experiences.
+                </p>
+            </div>
+
+            <div class="skills-content">
+
+                <div class="skills-category">
+                    <div class="skills-category-header">
+                        <span class="skills-number">01</span>
+                        <h3>Frontend</h3>
+                    </div>
+
+                    <div class="skills-grid">
+
+                        <div class="skill-card">
+                            <i class="fa-brands fa-html5"></i>
+                            <div>
+                                <h4>HTML</h4>
+                                <p>Structure & semantics</p>
+                            </div>
+                        </div>
+
+                        <div class="skill-card">
+                            <i class="fa-brands fa-css3-alt"></i>
+                            <div>
+                                <h4>CSS</h4>
+                                <p>Design & responsive layouts</p>
+                            </div>
+                        </div>
+
+                        <div class="skill-card">
+                            <i class="fa-brands fa-square-js"></i>
+                            <div>
+                                <h4>JavaScript</h4>
+                                <p>Interactive web experiences</p>
+                            </div>
+                        </div>
+
+                        <div class="skill-card">
+                            <i class="fa-brands fa-react"></i>
+                            <div>
+                                <h4>React</h4>
+                                <p>Component-based interfaces</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="skills-category">
+                    <div class="skills-category-header">
+                        <span class="skills-number">02</span>
+                        <h3>Development</h3>
+                    </div>
+
+                    <div class="skills-grid">
+
+                        <div class="skill-card">
+                            <i class="fa-brands fa-node-js"></i>
+                            <div>
+                                <h4>Node.js</h4>
+                                <p>Backend development</p>
+                            </div>
+                        </div>
+
+                        <div class="skill-card">
+                            <i class="fa-solid fa-database"></i>
+                            <div>
+                                <h4>MongoDB</h4>
+                                <p>Database management</p>
+                            </div>
+                        </div>
+
+                        <div class="skill-card">
+                            <i class="fa-brands fa-git-alt"></i>
+                            <div>
+                                <h4>Git</h4>
+                                <p>Version control</p>
+                            </div>
+                        </div>
+
+                        <div class="skill-card">
+                            <i class="fa-brands fa-github"></i>
+                            <div>
+                                <h4>GitHub</h4>
+                                <p>Code collaboration</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="skills-footer">
+                <p>Currently learning</p>
+
+                <div class="learning-stack">
+                    <span>jQuery</span>
+                    <span>Python</span>
+                    <span>Next.js</span>
                 </div>
             </div>
+
+        </section>
+
+        <section class="projects-section" id="projects">
+
+            <div class="projects-heading">
+                <p class="section-label">SELECTED WORK</p>
+
+                <h2>
+                    Things I've
+                    <span>built.</span>
+                </h2>
+
+                <p class="projects-intro">
+                    A selection of projects where I experiment with design,
+                    frontend development and interactive experiences.
+                </p>
             </div>
-            <!-- For Smaller Screens -->
-            <div class="small-screen">
-                
+
+            <div class="projects-list">
+
+                <article class="featured-project">
+
+                    <div class="project-image">
+                        <div class="project-image-placeholder">
+                            <span>01</span>
+                            <h3>Snake Game</h3>
+                        </div>
+                    </div>
+
+                    <div class="project-info">
+
+                        <div class="project-meta">
+                            <span>01</span>
+                            <span>JavaScript • HTML • CSS</span>
+                        </div>
+
+                        <h3>Snake Game</h3>
+
+                        <p>
+                            A browser-based Snake game focused on smooth
+                            gameplay, responsive controls and an interactive
+                            visual experience.
+                        </p>
+
+                        <div class="project-tags">
+                            <span>JavaScript</span>
+                            <span>DOM</span>
+                            <span>CSS Animation</span>
+                        </div>
+
+                        <a href="#" class="project-link">
+                            View Project
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        </a>
+
+                    </div>
+
+                </article>
+
+                <div class="project-grid">
+
+                    <article class="project-card">
+
+                        <div class="project-card-top">
+                            <span>02</span>
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        </div>
+
+                        <div class="project-card-content">
+                            <p class="project-type">Web Development</p>
+
+                            <h3>Portfolio Website</h3>
+
+                            <p>
+                                A responsive personal portfolio designed to
+                                showcase projects, skills and experience.
+                            </p>
+
+                            <div class="project-tags">
+                                <span>HTML</span>
+                                <span>CSS</span>
+                                <span>JavaScript</span>
+                            </div>
+                        </div>
+
+                    </article>
+
+                    <article class="project-card">
+
+                        <div class="project-card-top">
+                            <span>03</span>
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        </div>
+
+                        <div class="project-card-content">
+                            <p class="project-type">Web Application</p>
+
+                            <h3>Task Management</h3>
+
+                            <p>
+                                A productivity-focused web application exploring
+                                task organization and collaborative workflows.
+                            </p>
+
+                            <div class="project-tags">
+                                <span>JavaScript</span>
+                                <span>UI</span>
+                                <span>UX</span>
+                            </div>
+                        </div>
+
+                    </article>
+
+                </div>
+
             </div>
-        </main>
-    </body>
+
+            <div class="projects-footer">
+                <p>More projects coming soon.</p>
+
+                <a href="https://github.com/Swayam-Motghare" target="_blank" rel="noopener noreferrer">
+                    View GitHub
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </a>
+            </div>
+
+        </section>
+
+        <section class="contact-section" id="contact">
+
+            <div class="contact-header">
+                <p class="section-label">GET IN TOUCH</p>
+
+                <h2>
+                    Have an idea?
+                    <span>Let's build it.</span>
+                </h2>
+
+                <p>
+                    I'm always interested in discussing new projects,
+                    creative ideas and opportunities to build something useful.
+                </p>
+            </div>
+
+            <div class="contact-content">
+
+                <div class="contact-message">
+                    <p class="contact-eyebrow">START A CONVERSATION</p>
+
+                    <h3>
+                        Let's create something
+                        meaningful together.
+                    </h3>
+
+                    <a
+                        href="mailto:motghareswayam@gmail.com?subject=Project%20Inquiry"
+                        class="contact-email"
+                    >
+                        motghareswayam@gmail.com
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </a>
+                </div>
+
+                <div class="contact-details">
+
+                    <a
+                        href="mailto:motghareswayam@gmail.com"
+                        class="contact-card"
+                    >
+                        <span class="contact-icon">
+                            <i class="fa-solid fa-envelope"></i>
+                        </span>
+
+                        <span>
+                            <small>Email</small>
+                            <strong>Send me an email</strong>
+                        </span>
+
+                        <i class="fa-solid fa-arrow-up-right-from-square contact-arrow"></i>
+                    </a>
+
+                    <a
+                        href="https://github.com/Swayam-Motghare"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="contact-card"
+                    >
+                        <span class="contact-icon">
+                            <i class="fa-brands fa-github"></i>
+                        </span>
+
+                        <span>
+                            <small>GitHub</small>
+                            <strong>View my repositories</strong>
+                        </span>
+
+                        <i class="fa-solid fa-arrow-up-right-from-square contact-arrow"></i>
+                    </a>
+
+                    <a
+                        href="https://www.linkedin.com/in/swayammotghare2005/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="contact-card"
+                    >
+                        <span class="contact-icon">
+                            <i class="fa-brands fa-linkedin"></i>
+                        </span>
+
+                        <span>
+                            <small>LinkedIn</small>
+                            <strong>Connect with me</strong>
+                        </span>
+
+                        <i class="fa-solid fa-arrow-up-right-from-square contact-arrow"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer class="site-footer" id="site-footer">
+
+        <div class="social-links" id="social-links">
+
+            <a href="https://github.com/Swayam-Motghare" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                <i class="fa-brands fa-github"></i>
+            </a>
+
+            <a href="https://www.linkedin.com/in/swayammotghare2005/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                <i class="fa-brands fa-linkedin"></i>
+            </a>
+
+            <a href="https://www.instagram.com/swayam.motghare.05/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+
+            <a href="mailto:motghareswayam@gmail.com" aria-label="Email">
+                <i class="fa-solid fa-envelope"></i>
+            </a>
+
+        </div>
+
+        <div class="copyright-text" id="copyright-text">
+            <p>&copy; 2026 Swayam Motghare. All rights reserved.</p>
+        </div>
+
+        <div class="back-to-top" id="back-to-top">
+            <a href="#home">
+                Back to top
+                <i class="fa-solid fa-arrow-up"></i>
+            </a>
+        </div>
+
+    </footer>
+
+    <script src="./JS/script.js"></script>
+
 </body>
 </html>

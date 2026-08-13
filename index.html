@@ -6,6 +6,7 @@
     <meta name="description" content="Portfolio of Swayam Motghare, a frontend developer.">
     <link rel="stylesheet" href="./CSS/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.0/css/all.min.css" integrity="sha512-ApSLB1Pd3/bZN8fWB/RG9YhN/7bd9Hkf3AGaE2mPfebjrxagjuBtx2GcgdqIlJkUzwylBo61r9Xa9NmgBI0swA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="icon" type="image/png" href="./Images/favicon.png">
     <title>Portfolio - Swayam Motghare</title>
 </head>
 
@@ -148,12 +149,15 @@
 
                 <div class="hero-image-overlay"></div>
 
-                <img
-                    src="./Images/backgroudimage.png"
-                    alt="Swayam Motghare"
-                    class="hero-image"
-                    id="hero-image"
-                >
+                <picture>
+                    <source media="(max-width: 850px)" srcset="./Images/mobile-image.jpg">
+
+                    <img
+                        src="./Images/backgroudimage.png"
+                        alt="Swayam Motghare"
+                        class="hero-image"
+                    >
+                </picture>
 
             </div>
 

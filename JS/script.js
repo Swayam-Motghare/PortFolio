@@ -2,6 +2,7 @@ const mobileMenuButton = document.getElementById("mobile-menu-button");
 const primaryNavigation = document.getElementById("primary-navigation");
 const navigationLinks = document.querySelectorAll(".navigation-link");
 const talkButton = document.getElementById("talk-button");
+const loadingScreen = document.getElementById("loading-screen");
 
 mobileMenuButton.addEventListener("click", () => {
     const isOpen = primaryNavigation.classList.toggle("mobile-open");
@@ -11,7 +12,7 @@ mobileMenuButton.addEventListener("click", () => {
     mobileMenuButton.innerHTML = isOpen
         ? '<i class="fa-solid fa-xmark"></i>'
         : '<i class="fa-solid fa-bars"></i>';
-        
+
 });
 
 navigationLinks.forEach((link) => {
@@ -65,3 +66,10 @@ window.addEventListener("scroll", () => {
         }
     });
 });
+
+window.addEventListener('load',()=>{
+    setTimeout(() => {
+        loadingScreen.classList.add("loaded");
+        document.body.classList.remove("loading");
+    }, 2000);
+})

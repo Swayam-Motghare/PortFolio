@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=Story+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bitcount+Prop+Single:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    box-sizing: border-box;
+    width: 100vw;
+    height: 100vh;
+    background-image: linear-gradient(to right, #00ff0d 25%, #007a0a);
+    background: url(Images/background.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    align-items: end;
+    justify-items: center;
+}
+.sub-head{
+    font-size: 2rem;
+    color: white;
+    width: fit-content;
+    height: fit-content;
+    display: inline-block;
+    background-color: #ffffff2d;
+    padding: 10px;
+    border-radius: 15px;
+    grid-column-start: 2;
+    margin: 15px;
+}
+.board{
+    width: 800px;
+    height: 800px;
+    outline: 1px solid white;
+    border-radius: 5px;
+    background-color: #ffffff2d;
+    backdrop-filter: blur(2px);
+    grid-column-start: 2;
+    grid-row-start: 2;
+    display: grid;
+    grid-template-columns: repeat(20, 40px);
+    grid-template-rows: repeat(20, 40px);
+    overflow: hidden;
+}
+.snake{
+    width: 40px;
+    height: 40px;
+
+    background-color: #007a0a;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex-direction: column;
+    outline: 1px solid;
+}
+.snake div{
+    width: 2px;
+    height: 2px;
+    outline: 1px solid;
+    background-color: black;
+}
+.fruit{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: red;
+    font-size: 2rem;
+}
+.fruit i{
+    text-shadow: 0px 0px 5px grey;
+}
+.body{
+    width: 40px;
+    height: 40px;
+    background-color: #007906;
+    outline: 1px solid;
+    border-radius: 10px;
+}
+.hdgo{
+    display: none;
+}
+.gameover{
+    width: 80px;
+    height: 40px;
+    grid-row-start: 10;
+    grid-column-start: 10;
+    text-transform: uppercase;
+    background-color: bisque;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 5px;
+    color: rgb(107, 65, 10);
+    outline: 1px solid;
+}
+.scoreboard{
+    width: 300px;
+    height: 300px;
+    background-color: bisque;
+    border: 1px solid;
+    grid-column-start: 3;
+    grid-row-start: 2;
+    margin-bottom: 250px;
+    border-radius: 15px;
+    box-shadow: 0px 0px 8px grey;
+}
+.heading{
+    font-size: 2rem;
+    text-transform: uppercase;
+    text-align: center;
+    border-bottom: 1px solid;
+    border-radius: 15px 15px 0px 0px;
+    font-weight: 600;
+    color: rgb(107, 65, 10);
+    background-color: bisque;
+}
+.subhead{
+    margin-top: 25px;
+    font-weight: 500;
+    font-size: 2rem;
+    text-transform: uppercase;
+    text-align: center;
+    color: rgb(107, 65, 10);
+}
+.curentscore{
+    font-size: 2rem;
+    text-align: center;
+    background-color: whitesmoke;
+    color: rgb(107, 65, 10);
+    /* color: goldenrod; */
+    border: 1px solid;
+    border-radius: 5px;
+    margin: 15px;
+}

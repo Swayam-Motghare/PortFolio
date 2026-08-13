@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.0/css/all.min.css" integrity="sha512-ApSLB1Pd3/bZN8fWB/RG9YhN/7bd9Hkf3AGaE2mPfebjrxagjuBtx2GcgdqIlJkUzwylBo61r9Xa9NmgBI0swA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+    <title>Modern Snake Game</title>
+</head>
+<body id="main-body">
+    <div class="sub-head" id="subhead">Use Arrow buttons on keyboard to Move</div>
+    <div class="board" id="board">
+        <div class="fruit" id="fruit"><i class="fa-solid fa-apple-whole" id="apple"></i></div>
+        <div class="snake" id="snake">
+            <div class="r-eye"></div>
+            <div class="l-eye"></div>
+        </div>
+        <div class="hdgo gameover" id="gmo">Game Over</div>
+    </div>
+    <aside class="scoreboard">
+        <div class="heading">scores</div>
+        <div class="subhead">current</div>
+        <div class="curentscore" id="currentScore">0</div>
+        <div class="subhead">Best</div>
+        <div class="curentscore" id="bestScore">0</div>
+    </aside>
+    <script src="script.js"></script>
+
+</body>
+</html>

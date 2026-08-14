@@ -249,8 +249,8 @@ a {
     min-height: calc(100vh - 70px);
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    padding: 6vh 0 8vh 7vw;
+    justify-content: flex-start;
+    padding: 10vh 0 8vh 7vw;
 }
 
 .hero-greeting h2 {
@@ -429,7 +429,7 @@ a {
     object-fit: cover;
     object-position: center 35%;
     z-index: 0;
-}
+} 
 
 .hero-image-overlay {
     position: absolute;

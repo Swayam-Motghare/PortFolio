@@ -421,15 +421,21 @@ a {
     overflow: hidden;
 }
 
-.hero-image {
+.hero-image-container picture {
     position: absolute;
     inset: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.hero-image {
+    display: block;
     width: 100%;
     height: 100%;
     object-fit: cover;
     object-position: center 35%;
-    z-index: 0;
-} 
+}
 
 .hero-image-overlay {
     position: absolute;

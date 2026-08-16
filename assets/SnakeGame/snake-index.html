@@ -3,28 +3,121 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.0/css/all.min.css" integrity="sha512-ApSLB1Pd3/bZN8fWB/RG9YhN/7bd9Hkf3AGaE2mPfebjrxagjuBtx2GcgdqIlJkUzwylBo61r9Xa9NmgBI0swA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="style.css">
-    <title>Modern Snake Game</title>
+    <link rel="stylesheet" href="./style.css">
+    <title>Snake Game</title>
 </head>
-<body id="main-body">
-    <div class="sub-head" id="subhead">Use Arrow buttons on keyboard to Move</div>
-    <div class="board" id="board">
-        <div class="fruit" id="fruit"><i class="fa-solid fa-apple-whole" id="apple"></i></div>
-        <div class="snake" id="snake">
-            <div class="r-eye"></div>
-            <div class="l-eye"></div>
-        </div>
-        <div class="hdgo gameover" id="gmo">Game Over</div>
-    </div>
-    <aside class="scoreboard">
-        <div class="heading">scores</div>
-        <div class="subhead">current</div>
-        <div class="curentscore" id="currentScore">0</div>
-        <div class="subhead">Best</div>
-        <div class="curentscore" id="bestScore">0</div>
-    </aside>
-    <script src="script.js"></script>
+<body class="loading">
 
+    <div class="loading-screen" id="loading-screen">
+        <div class="loading-content">
+            <div class="loading-logo">S<span>.</span></div>
+            <p>Loading Snake Game...</p>
+            <div class="loading-bar">
+                <div class="loading-progress"></div>
+            </div>
+        </div>
+    </div>
+
+    <main class="game-container">
+
+        <header class="game-header">
+
+            <div class="game-brand">
+                <h1>Snake<span>.</span></h1>
+                <p>Classic Snake Game</p>
+            </div>
+
+            <div class="game-score">
+                <div class="score-box">
+                    <span>Score</span>
+                    <strong id="score">0</strong>
+                </div>
+
+                <div class="score-box">
+                    <span>Best</span>
+                    <strong id="high-score">0</strong>
+                </div>
+            </div>
+
+        </header>
+
+        <nav class="game-navigation">
+            <a href="/index.html">
+                <i class="fa-solid fa-house"></i>
+                Portfolio Home
+            </a>
+
+            <a href="/index.html#projects">
+                <i class="fa-solid fa-folder-open"></i>
+                Projects
+            </a>
+        </nav>
+
+        <section class="game-board-container">
+
+            <div class="game-board" id="game-board"></div>
+
+            <div class="game-overlay" id="game-overlay">
+                <div class="overlay-content">
+                    <span class="overlay-label">GAME OVER</span>
+                    <h2 id="overlay-title">Game Over</h2>
+                    <p id="overlay-message">Your snake has collided.</p>
+
+                    <button class="restart-button" id="overlay-reset">
+                        Play Again
+                    </button>
+                </div>
+            </div>
+
+        </section>
+
+        <section class="game-status">
+            <div class="status-message" id="status-message">
+                Press any arrow key to start
+            </div>
+        </section>
+
+        <section class="game-controls">
+
+            <button id="pause-button">
+                Pause
+            </button>
+
+            <button id="reset-button">
+                Reset
+            </button>
+
+        </section>
+
+        <section class="mobile-controls">
+
+            <button class="control-up" data-direction="up">
+                ↑
+            </button>
+
+            <div class="control-middle">
+                <button data-direction="left">
+                    ←
+                </button>
+
+                <button data-direction="down">
+                    ↓
+                </button>
+
+                <button data-direction="right">
+                    →
+                </button>
+            </div>
+
+        </section>
+
+        <footer class="game-footer">
+            <p>Arrow Keys to Move</p>
+            <p>ESC to Reset · Space to Pause</p>
+        </footer>
+
+    </main>
+
+    <script src="./script.js"></script>
 </body>
 </html>

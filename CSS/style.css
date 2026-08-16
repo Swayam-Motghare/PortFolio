@@ -249,8 +249,8 @@ a {
     min-height: calc(100vh - 70px);
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    padding: 10vh 0 8vh 7vw;
+    justify-content: center;
+    padding: 7vh 0 6vh 7vw;
 }
 
 .hero-greeting h2 {

@@ -1,275 +1,431 @@
-const body = document.getElementById("main-body");
-const board = document.getElementById("board");
-const snake = document.getElementById("snake");
-const fruit = document.getElementById("fruit");
-const apple = document.getElementById("apple");
-const tip = document.getElementById("subhead");
-const gmo = document.getElementById("gmo");
-const currentScore = document.getElementById("currentScore");
-const bestscore = document.getElementById("bestScore");
-const bgmusic = document.getElementById("bgmusic");
+const loadingScreen = document.getElementById("loading-screen");
+const gameBoard = document.getElementById("game-board");
+const scoreElement = document.getElementById("score");
+const highScoreElement = document.getElementById("high-score");
+const statusMessage = document.getElementById("status-message");
+const pauseButton = document.getElementById("pause-button");
+const resetButton = document.getElementById("reset-button");
+const gameOverlay = document.getElementById("game-overlay");
+const overlayTitle = document.getElementById("overlay-title");
+const overlayMessage = document.getElementById("overlay-message");
+const overlayReset = document.getElementById("overlay-reset");
 
-let snakeLenght = 1;
-let score = 0;
-let HighScore = 0;
-let direction = "";
-let speed = 400;
-let isOver = false;
-let isGold = false;
-let cond = 50;
+const BOARD_SIZE = 20;
+const GAME_SPEED = 300;
 
-// snakeCords
-let snakeScol = 5;
-let snakeSrow = 6;
+const gameState = {
+    snake: [],
+    food: null,
+    direction: {
+        row: 0,
+        col: 1
+    },
+    score: 0,
+    highScore: Number(localStorage.getItem("snakeHighScore")) || 0,
+    isRunning: false,
+    isPaused: false,
+    isGameOver: false,
+    gameLoop: null
+};
 
-// fruitCords
-let fruitScol = 9;
-let fruitSrow = 8;
+window.addEventListener("load", () => {
+    setTimeout(() => {
+        loadingScreen.classList.add("loaded");
+        document.body.classList.remove("loading");
+    }, 1800);
+});
 
-// Arrays
-let SnakeBodyArray = new Array();
-SnakeBodyArray[0] = snake;
-let cordsArray = new Array();
-let temp = new Array();
+function createBoard() {
+    gameBoard.innerHTML = "";
 
-// GAME START
-initialLoad()
-gameLoop();
-
-function initialLoad(){
-    snakeLenght = 1;
-    score = 0;
-
-    snake.style.gridColumnStart = snakeScol;
-    snake.style.gridRowStart = snakeSrow;
-
-    fruit.style.gridColumnStart = fruitScol;
-    fruit.style.gridRowStart = fruitSrow;
-
-    tip.innerHTML = 'Use "ArrowRight" Key To Start'
+    for (let i = 0; i < BOARD_SIZE * BOARD_SIZE; i++) {
+        const cell = document.createElement("div");
+        cell.classList.add("board-cell");
+        gameBoard.appendChild(cell);
+    }
 }
 
-body.addEventListener('keydown',(event)=>{
-    // console.log(event.code);
-    if(isOver && event.code != "KeyR"){
+function initializeGame() {
+    stopGameLoop();
+
+    gameState.snake = [
+        { row: 10, col: 8 },
+        { row: 10, col: 9 },
+        { row: 10, col: 10 }
+    ];
+
+    gameState.food = null;
+
+    gameState.direction = {
+        row: 0,
+        col: 1
+    };
+
+    gameState.score = 0;
+    gameState.isRunning = false;
+    gameState.isPaused = false;
+    gameState.isGameOver = false;
+
+    pauseButton.textContent = "Pause";
+
+    hideGameOverlay();
+
+    statusMessage.textContent = "Press any arrow key to start";
+
+    generateFood();
+    renderGame();
+}
+
+function generateFood() {
+    if (gameState.snake.length >= BOARD_SIZE * BOARD_SIZE) {
+        gameState.food = null;
         return;
     }
 
-    let key = event.key
-    tip.innerHTML = "JS Snake Game! "
-    if(key == "ArrowRight" && direction != "left"){
-        direction = "right";
-    } else if(key == "ArrowLeft" && direction != "right"){
-        direction = "left";
-    } else if(key == "ArrowUp" && direction != "down"){
-        direction = "up";
-    } else if(key == "ArrowDown" && direction != "up"){
-        direction = "down";
-    } else if(key == "Escape"){
-        direction = "";
-        bgmusic.pause();
-    } else if (event.code == "KeyR"){
-        if(isOver == true){
-            restartGame();
+    let newFood;
+
+    do {
+        newFood = {
+            row: Math.floor(Math.random() * BOARD_SIZE),
+            col: Math.floor(Math.random() * BOARD_SIZE)
+        };
+    } while (
+        gameState.snake.some(
+            segment =>
+                segment.row === newFood.row &&
+                segment.col === newFood.col
+        )
+    );
+
+    gameState.food = newFood;
+}
+
+function renderSnake() {
+    const cells = gameBoard.querySelectorAll(".board-cell");
+
+    gameState.snake.forEach((segment, index) => {
+        const cellIndex = segment.row * BOARD_SIZE + segment.col;
+        const cell = cells[cellIndex];
+
+        if (!cell) {
+            return;
         }
-    }
-    if(direction != ""){
-        bgmusic.play();
-    }
-})
 
-function moveSnake(axis){
-    for (let i = SnakeBodyArray.length - 1; i >= 1; i--) {
-    cordsArray[i] = cordsArray[i - 1];
-    }
-    if(axis == "right" ){
-        snakeScol++
-    } else if ( axis == "left" ){
-        snakeScol--
-    } else if ( axis == "up" ){
-        snakeSrow--
-    } else if ( axis == "down"){
-        snakeSrow++
-    }
-    if(axis == "left" || axis == "right"){
-        snake.style.flexDirection = "column";
-    } else if(axis == "up" || axis == "down"){
-        snake.style.flexDirection = "row";
-    }
-    cordsArray[0] = {
-        CS: snakeScol,
-        RS: snakeSrow
-    };
+        cell.classList.add("snake");
 
-    for (let i = 0; i < SnakeBodyArray.length; i++) {
-        if (cordsArray[i]) {
-        SnakeBodyArray[i].style.gridColumnStart = cordsArray[i]["CS"];
-        SnakeBodyArray[i].style.gridRowStart = cordsArray[i]["RS"];
+        if (index === gameState.snake.length - 1) {
+            cell.classList.add("snake-head");
         }
-    }
-
-    for (let i = 1; i < SnakeBodyArray.length; i++) {
-        if (
-        cordsArray[0]["CS"] == cordsArray[i]["CS"] &&
-        cordsArray[0]["RS"] == cordsArray[i]["RS"]
-        ) {
-        console.log("collide with body");
-        gameOver();
-        }
-    }
+    });
 }
 
-function renderSnake(){
-    snake.style.gridColumnStart = snakeScol;
-    snake.style.gridRowStart = snakeSrow;
-}
+function renderFood() {
+    if (!gameState.food) {
+        return;
+    }
 
-function checkWallCollision(){
-    if(snakeScol > 20){
-        snakeScol = 0;
-    } else if (snakeSrow > 20){
-        snakeSrow = 0;
-    } else if (snakeScol < 0){
-        snakeScol = 21;
-    } else if(snakeSrow < 0){
-        snakeSrow = 21;
+    const cells = gameBoard.querySelectorAll(".board-cell");
+    const index =
+        gameState.food.row * BOARD_SIZE +
+        gameState.food.col;
+
+    const cell = cells[index];
+
+    if (cell) {
+        cell.classList.add("food");
     }
 }
 
-function eatFruit(){
-    if(
-        snakeScol == fruitScol && snakeSrow == fruitSrow
-    ){
-        if(isGold == true){
-            score+=50;
-            currentScore.innerHTML = score;
-        } else{
-            score+=10;
-            currentScore.innerHTML = score;
-        }
-        if(score > HighScore){
-            HighScore = score;
-            bestscore.innerHTML = HighScore;
-        }
-        fruitLocation();
-        renderFruit();
-        growBody();
-        increaseDif();
-        snakeLenght++;
-    }
+function renderScore() {
+    scoreElement.textContent = gameState.score;
+    highScoreElement.textContent = gameState.highScore;
 }
 
-function fruitLocation(){
-    let loc1 = Math.floor(Math.random()*20)+1;
-    let loc2 = Math.floor(Math.random()*20)+1;
-    for (let i = 0; i < cordsArray.length; i++) {
-        const element = cordsArray[i];
-        if(element["CS"] == loc1 && element["RS"] == loc2){
-            return fruitLocation();
-        }
-    }
-    fruitScol = loc1;
-    fruitSrow = loc2;
+function renderGame() {
+    const cells = gameBoard.querySelectorAll(".board-cell");
 
-    goldApple();
-}
-
-function renderFruit(){
-    fruit.style.gridColumnStart = fruitScol;
-    fruit.style.gridRowStart = fruitSrow;
-}
-
-function growBody(){
-    SnakeBodyArray[snakeLenght] = document.createElement("div");
-    SnakeBodyArray[snakeLenght].classList.add("body");
-    SnakeBodyArray[snakeLenght].style.gridColumnStart = cordsArray["CS"];
-    SnakeBodyArray[snakeLenght].style.gridRowStart = cordsArray["RS"];
-    board.appendChild(SnakeBodyArray[snakeLenght]);
-}
-
-function gameOver(){
-    direction = "";
-    
-    board.style.outline = "1px solid rgb(107, 65, 10)";
-    board.style.backgroundColor = "rgba(107, 65, 10, 0.27)"
-    for (let i = 0; i < SnakeBodyArray.length; i++) {
-        const element = SnakeBodyArray[i];
-        element.style.display = "none";
-    }
-    gmo.classList.remove("hdgo");
-    apple.style.display = "none"
-    tip.innerHTML = "Press R to Restart"
-    isOver = true;
-}
-
-function restartGame(){
-    console.log("restart");
-
-    gmo.classList.add("hdgo");
-
-    for (let i = 1; i < SnakeBodyArray.length; i++) {
-        SnakeBodyArray[i].remove();
-    }
-    SnakeBodyArray = [];
-    cordsArray = [];
-    SnakeBodyArray[0] = snake;
-
-    snakeLenght = 1;
-    direction = "";
-    isOver = false;
-    score = 0;
-    speed = 400;
-    cond = 50;
-    snake.style.display = "flex";
-    apple.style.display = "inline-block";
-
-    snakeScol = 5;
-    snakeSrow = 6;
-    fruitScol = 9;
-    fruitSrow = 8;
-
-    board.style.outline = "";
-    board.style.backgroundColor = "";
+    cells.forEach(cell => {
+        cell.classList.remove(
+            "snake",
+            "snake-head",
+            "food"
+        );
+    });
 
     renderSnake();
-    renderFruit();
-
-    tip.innerHTML = 'Use "ArrowRight" Key To Start';
-
-    score = 0;
-    currentScore.innerHTML = score;
-    
+    renderFood();
+    renderScore();
 }
 
-function increaseDif(){
-    
-    if(speed > 150){
-        if(score >= cond){
-            speed = speed - 50;
-            cond = cond + 50;
+function checkSelfCollision(position) {
+    return gameState.snake.some(segment => {
+        return (
+            segment.row === position.row &&
+            segment.col === position.col
+        );
+    });
+}
+
+function checkFoodCollision(position) {
+    return (
+        gameState.food &&
+        position.row === gameState.food.row &&
+        position.col === gameState.food.col
+    );
+}
+
+function moveSnake() {
+    if (
+        !gameState.isRunning ||
+        gameState.isPaused ||
+        gameState.isGameOver
+    ) {
+        return;
+    }
+
+    const head =
+        gameState.snake[gameState.snake.length - 1];
+
+    let newRow =
+        head.row + gameState.direction.row;
+
+    let newCol =
+        head.col + gameState.direction.col;
+
+    if (newRow < 0) {
+        newRow = BOARD_SIZE - 1;
+    }
+
+    if (newRow >= BOARD_SIZE) {
+        newRow = 0;
+    }
+
+    if (newCol < 0) {
+        newCol = BOARD_SIZE - 1;
+    }
+
+    if (newCol >= BOARD_SIZE) {
+        newCol = 0;
+    }
+
+    const newHead = {
+        row: newRow,
+        col: newCol
+    };
+
+    const ateFood = checkFoodCollision(newHead);
+
+    const bodyToCheck = ateFood
+        ? gameState.snake
+        : gameState.snake.slice(1);
+
+    const collided = bodyToCheck.some(segment => {
+        return (
+            segment.row === newHead.row &&
+            segment.col === newHead.col
+        );
+    });
+
+    if (collided) {
+        endGame();
+        return;
+    }
+
+    gameState.snake.push(newHead);
+
+    if (ateFood) {
+        gameState.score += 10;
+
+        if (gameState.score > gameState.highScore) {
+            gameState.highScore = gameState.score;
+            localStorage.setItem(
+                "snakeHighScore",
+                gameState.highScore
+            );
         }
-    }
-    console.log(speed);
-}
 
-function goldApple(){
-    let goldChance = Math.floor(Math.random()*10)+1;
-
-    if(goldChance == 10){
-        isGold = true;
-        apple.style.color = "goldenrod";
+        if (
+            gameState.snake.length <
+            BOARD_SIZE * BOARD_SIZE
+        ) {
+            generateFood();
+        } else {
+            endGame("You Win!", "You filled the entire board.");
+            return;
+        }
     } else {
-        isGold = false;
-        apple.style.color = "red";
+        gameState.snake.shift();
+    }
+
+    renderGame();
+}
+
+function changeDirection(row, col) {
+    if (
+        gameState.isGameOver ||
+        gameState.isPaused
+    ) {
+        return;
+    }
+
+    const currentDirection =
+        gameState.direction;
+
+    if (
+        currentDirection.row + row === 0 &&
+        currentDirection.col + col === 0
+    ) {
+        return;
+    }
+
+    gameState.direction = {
+        row,
+        col
+    };
+
+    if (!gameState.isRunning) {
+        startGameLoop();
     }
 }
 
-function gameLoop(){
-    if(direction != ""){
-        moveSnake(direction);
-        eatFruit();
-        checkWallCollision();
-        renderSnake();
+document.addEventListener("keydown", event => {
+    switch (event.key) {
+        case "ArrowUp":
+            event.preventDefault();
+            changeDirection(-1, 0);
+            break;
+
+        case "ArrowDown":
+            event.preventDefault();
+            changeDirection(1, 0);
+            break;
+
+        case "ArrowLeft":
+            event.preventDefault();
+            changeDirection(0, -1);
+            break;
+
+        case "ArrowRight":
+            event.preventDefault();
+            changeDirection(0, 1);
+            break;
+
+        case " ":
+            event.preventDefault();
+            togglePause();
+            break;
+
+        case "Escape":
+            event.preventDefault();
+            initializeGame();
+            break;
     }
-    setTimeout(gameLoop,speed);
+});
+
+function startGameLoop() {
+    if (gameState.isGameOver) {
+        return;
+    }
+
+    stopGameLoop();
+
+    gameState.isRunning = true;
+    gameState.isPaused = false;
+
+    statusMessage.textContent = "Game running";
+
+    gameState.gameLoop = setInterval(
+        moveSnake,
+        GAME_SPEED
+    );
 }
+
+function stopGameLoop() {
+    if (gameState.gameLoop) {
+        clearInterval(gameState.gameLoop);
+        gameState.gameLoop = null;
+    }
+}
+
+function togglePause() {
+    if (gameState.isGameOver) {
+        return;
+    }
+
+    if (!gameState.isRunning) {
+        startGameLoop();
+        return;
+    }
+
+    if (gameState.isPaused) {
+        gameState.isPaused = false;
+        pauseButton.textContent = "Pause";
+        statusMessage.textContent = "Game running";
+    } else {
+        gameState.isPaused = true;
+        pauseButton.textContent = "Resume";
+        statusMessage.textContent = "Game paused";
+    }
+}
+
+function endGame(
+    title = "Game Over",
+    message = "Your snake has collided."
+) {
+    gameState.isGameOver = true;
+    gameState.isRunning = false;
+    gameState.isPaused = false;
+
+    stopGameLoop();
+
+    overlayTitle.textContent = title;
+    overlayMessage.textContent = message;
+
+    statusMessage.textContent = title;
+
+    showGameOverlay();
+}
+
+function showGameOverlay() {
+    gameOverlay.classList.add("visible");
+}
+
+function hideGameOverlay() {
+    gameOverlay.classList.remove("visible");
+}
+
+pauseButton.addEventListener("click", togglePause);
+
+resetButton.addEventListener("click", initializeGame);
+
+overlayReset.addEventListener("click", initializeGame);
+
+document
+    .querySelectorAll(".mobile-controls button")
+    .forEach(button => {
+        button.addEventListener("click", () => {
+            const direction =
+                button.dataset.direction;
+
+            switch (direction) {
+                case "up":
+                    changeDirection(-1, 0);
+                    break;
+
+                case "down":
+                    changeDirection(1, 0);
+                    break;
+
+                case "left":
+                    changeDirection(0, -1);
+                    break;
+
+                case "right":
+                    changeDirection(0, 1);
+                    break;
+            }
+        });
+    });
+
+createBoard();
+initializeGame();

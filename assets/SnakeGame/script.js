@@ -10,6 +10,7 @@ const overlayTitle = document.getElementById("overlay-title");
 const overlayMessage = document.getElementById("overlay-message");
 const overlayReset = document.getElementById("overlay-reset");
 
+
 const BOARD_SIZE = 20;
 const GAME_SPEED = 300;
 
@@ -27,6 +28,7 @@ const gameState = {
     isGameOver: false,
     gameLoop: null
 };
+
 
 window.addEventListener("load", () => {
     setTimeout(() => {

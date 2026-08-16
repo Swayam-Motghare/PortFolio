@@ -251,6 +251,37 @@ body.intro-active {
     transform: translateY(0);
 }
 
+@media (max-width: 400px) {
+
+    .intro-content {
+        padding: 0 20px;
+    }
+
+    .intro-heading {
+        font-size: clamp(3.2rem, 18vw, 4.8rem);
+    }
+
+    .intro-eyebrow {
+        font-size: 0.6rem;
+        letter-spacing: 0.14em;
+    }
+
+    .intro-tagline {
+        margin-top: 18px;
+        font-size: 0.8rem;
+    }
+
+    .intro-enter-button {
+        padding: 11px 16px;
+        font-size: 0.75rem;
+    }
+
+    .intro-skip {
+        bottom: 18px;
+        font-size: 0.6rem;
+    }
+}
+
 @media (max-width: 600px) {
 
     .intro-heading {

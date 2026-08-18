@@ -1454,7 +1454,7 @@ a {
     .intro-blob {
         opacity: 0.12;
     }
-    
+
     .primary-navigation {
         position: absolute;
         top: 70px;
@@ -1842,4 +1842,124 @@ a {
     .hero-image-container {
         min-height: 450px;
     }
+}
+
+.ai-development-section {
+    width: 100%;
+    min-height: 100vh;
+    padding: 110px 7vw 90px;
+    background-color: var(--color-bg);
+}
+
+.ai-development-header {
+    max-width: 760px;
+}
+
+.ai-development-header h2 {
+    color: var(--color-text);
+    font-size: clamp(2.4rem, 4vw, 4rem);
+    font-weight: 600;
+    line-height: 1.08;
+    letter-spacing: -0.035em;
+}
+
+.ai-development-header h2 span {
+    color: var(--color-accent);
+}
+
+.ai-development-list {
+    margin-top: 70px;
+    border-top: 1px solid var(--color-border);
+}
+
+.ai-development-item {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    gap: 30px;
+    align-items: center;
+    padding: 28px 0;
+    border-bottom: 1px solid var(--color-border);
+    transition: padding-left 0.25s ease;
+}
+
+.ai-development-item:hover {
+    padding-left: 10px;
+}
+
+.ai-development-number {
+    color: var(--color-accent);
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.ai-development-content {
+    display: grid;
+    grid-template-columns: minmax(180px, 0.4fr) 1fr;
+    gap: 40px;
+    align-items: center;
+}
+
+.ai-development-content h3 {
+    color: var(--color-text);
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.ai-development-content p {
+    max-width: 600px;
+    color: var(--color-primary);
+    font-size: 0.85rem;
+    line-height: 1.7;
+}
+
+@media (max-width: 800px) {
+
+    .ai-development-section {
+        padding: 90px 30px 70px;
+    }
+
+    .ai-development-list {
+        margin-top: 50px;
+    }
+
+    .ai-development-item {
+        grid-template-columns: 50px 1fr;
+        gap: 20px;
+    }
+
+    .ai-development-content {
+        grid-template-columns: 1fr;
+        gap: 8px;
+    }
+
+}
+
+@media (max-width: 500px) {
+
+    .ai-development-section {
+        padding: 75px 22px 55px;
+    }
+
+    .ai-development-header h2 {
+        font-size: 2.3rem;
+    }
+
+    .ai-development-list {
+        margin-top: 40px;
+    }
+
+    .ai-development-item {
+        grid-template-columns: 35px 1fr;
+        gap: 15px;
+        padding: 24px 0;
+    }
+
+    .ai-development-content h3 {
+        font-size: 0.95rem;
+    }
+
+    .ai-development-content p {
+        font-size: 0.75rem;
+    }
+
 }
